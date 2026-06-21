@@ -1,0 +1,32 @@
+.btn {
+    width: fit-content;
+    padding: 14px 48px;
+    background: linear-gradient(135deg,
+            #8B6914 0%,
+            #C9A84C 20%,
+            #E6D186 40%,
+            #F5E6A3 50%,
+            #D4AF37 65%,
+            #C9A84C 80%,
+            #8B6914 100%);
+    color: var(--azul-escuro);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+    .btn {
+        font-size: 20px;
+        padding: 18px 64px;
+    }
+}
