@@ -1,5 +1,7 @@
-import Caixa from './caixa/Caixa.jsx'
+import Caixa from './Caixa/Caixa'
 import styles from './Secao02.module.css'
+import TituloSecao from '../../Components/TituloSecao/TituloSecao'
+
 
 const cartoes = [
   {
@@ -24,7 +26,7 @@ const cartoes = [
 function Secao02() {
   return (
     <section className={styles.secao02} id="secao02">
-      <h2 className={styles.titulo}>Tradução Juramentada</h2>
+      <TituloSecao titulo="Tradução Juramentada" />
       <div className={styles.grade}>
         {cartoes.map((card) => (
           <Caixa key={card.titulo}

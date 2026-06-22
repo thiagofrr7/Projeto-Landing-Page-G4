@@ -1,6 +1,6 @@
-import Secao02 from './main/secao02/Secao02'
-import Secao03 from './main/secao03/Secao03'
-import Secao07 from './main/secao07/Secao07'
+import Secao02 from './Main/Secao02/Secao02'
+import Secao03 from './Main/Secao03/Secao03'
+import Secao07 from './Main/Secao07/Secao07'
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import styles from './Caixa.module.css'
-import bookmarkIcon from '../../../assets/icons/bookmark-star.svg'
+import bookmarkIcon from '../../../assets/Icons/bookmark-star.svg'
 
 function Caixa({ titulo, texto }) { //destructuring do objeto
   return (
@@ -19,4 +19,4 @@ function Caixa({ titulo, texto }) { //destructuring do objeto
     </article>
   )
 }
-export default Caixa;
+export default Caixa; 
