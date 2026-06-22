@@ -1,3 +1,16 @@
+import Footer from "./Footer/Footer";
+import SecaoDepoimentos from "./main/SecaoDepoimentos/SecaoDepoimentos";
+import SecaoQuemSouEu from "./main/SecaoQuemSouEu/SecaoQuemSouEu";
+
+
+function App() {
+  return (
+    <>
+      <SecaoQuemSouEu/>
+      <SecaoDepoimentos/>
+      <Footer/> 
+    </>
+  );
 import { Routes, Route } from 'react-router-dom';
 import Menu from './Header/Menu';
 import Chamada from './Main/Secao1/Chamada';
