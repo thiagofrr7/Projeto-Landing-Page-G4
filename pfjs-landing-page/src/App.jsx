@@ -1,8 +1,15 @@
+import Footer from "./Footer/Footer";
+import SecaoDepoimentos from "./main/SecaoDepoimentos/SecaoDepoimentos";
+import SecaoQuemSouEu from "./main/SecaoQuemSouEu/SecaoQuemSouEu";
+
+
 function App() {
   return (
-    <div>
-      <h1>Projeto Landing Page G4 - Tradutora Juramentada</h1>
-    </div>
+    <>
+      <SecaoQuemSouEu/>
+      <SecaoDepoimentos/>
+      <Footer/> 
+    </>
   );
 }
 
