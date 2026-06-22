@@ -23,15 +23,15 @@
   padding: 0 24px;
 }
 
+body{
+  background-color: var(--azul-escuro);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-}
-
-body {
-  background: var(--azul-escuro);
 }
 
 h1, h2 {

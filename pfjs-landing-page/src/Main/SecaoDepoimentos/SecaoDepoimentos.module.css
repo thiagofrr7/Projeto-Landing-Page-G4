@@ -1,0 +1,45 @@
+.secaoDepoimentos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+
+.divDepoimentos {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 80px;
+    margin-top: 100px;
+}
+
+.divIndicadores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 100px;
+}
+
+.indicador {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background-color: #ccc; 
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.indicadorAtivo {
+    background-color: var(--dourado); 
+    transform: scale(1.2);
+}
