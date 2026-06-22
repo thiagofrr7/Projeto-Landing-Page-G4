@@ -1,0 +1,121 @@
+/* Mobile First */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    transition: background 0.3s ease;
+    z-index: 1000;
+}
+
+.menuScrolled {
+    background: var(--azul-escuro);
+
+}
+
+.menuHamb {
+    display: block;
+    cursor: pointer;
+    width: 32px;
+    filter: invert(20%) sepia(80%) saturate(500%) hue-rotate(185deg) brightness(60%);
+}
+
+.menuScrolled .menuHamb {
+    filter: invert(70%) sepia(50%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+.menuInner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    position: relative;
+}
+
+.menuLogo {
+    width: 80px;
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.8));
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+.menuLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    width: 100vw;
+    list-style: none;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 24px 32px;
+    gap: 24px;
+    margin: 0;
+    z-index: 100;
+    align-items: flex-end;
+}
+
+.menuLinksAberto {
+    display: flex;
+}
+
+.menuLinks a {
+    color: var(--dourado);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.menuLinks a:hover {
+    color: var(--branco-suave);
+    opacity: 0.8;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    .menuHamb {
+        display: none;
+    }
+
+    .menuLinks {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        gap: 32px;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .menuLinks a {
+        color: var(--dourado);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+    }
+
+    .menuLinks a:hover {
+        color: var(--azul-medio);
+        opacity: 0.8;
+    }
+
+    .menuScrolled .menuLinks a:hover {
+        color: var(--branco);
+        opacity: 0.8;
+    }
+}
