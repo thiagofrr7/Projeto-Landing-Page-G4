@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
+
+/* variáveis de cores usadas no projeto */
+:root {
+  --azul-escuro: #032644;
+  --azul-medio: #0A3D62;
+  --dourado: #F7C76A;
+  --dourado-claro: rgba(247, 199, 106, 0.75);
+  --dourado-medio: rgba(247, 199, 106, 0.65);
+  --azul-medio-transparente: rgba(10, 61, 98, 0.85);
+  --branco: #ffffff;
+  --branco-suave: rgba(255, 255, 255, 0.85);
+  --branco-fraco: rgba(255, 255, 255, 0.5);
+  --max-width: 1280px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+body{
+  background-color: var(--azul-escuro);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Cinzel', serif;
+}
