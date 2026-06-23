@@ -76,11 +76,11 @@
     }
 
     .titulo {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .texto {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
@@ -88,11 +88,11 @@
 
 @media (min-width: 1024px) {
     .titulo {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .texto {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .caixa {

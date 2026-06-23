@@ -1,7 +1,10 @@
 /* ========== MOBILE ========== */
 .secao03 {
     width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
     padding: 40px 20px 48px;
+    margin-top: -50px;
 }
 
 .grade {
@@ -10,15 +13,12 @@
     gap: 12px;
     max-width: 320px;
     margin: 0 auto;
-    margin-top: 40px;
 }
 
 /* ========== TABLET ========== */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) {
     .secao03 {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 56px 40px 64px;
+        padding: 72px 40px 64px;
     }
 
     .grade {
@@ -26,10 +26,13 @@
         max-width: none;
         width: 100%;
         gap: 16px;
-        margin-top: 56px;
+        
     }
+}
 
-    .grade > :last-child:nth-child(3n + 1) {
+/* Centraliza o último item quando ele fica sozinho na linha (apenas no tablet, 3 colunas) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .grade> :last-child:nth-child(3n + 1) {
         grid-column: 2;
     }
 }
@@ -37,9 +40,7 @@
 /* ========== DESKTOP ========== */
 @media (min-width: 1024px) {
     .secao03 {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        padding: 72px 48px 80px;
+        padding: 120px 48px 80px;
     }
 
     .grade {
@@ -50,5 +51,4 @@
         margin: 0 auto;
         margin-top: 72px;
     }
-
 }

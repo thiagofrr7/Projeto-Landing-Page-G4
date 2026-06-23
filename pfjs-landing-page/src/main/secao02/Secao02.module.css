@@ -1,6 +1,8 @@
 /* ========== MOBILE ========== */
 .secao02 {
     width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
     padding: 40px 20px 48px;
 }
 
@@ -19,8 +21,6 @@
 @media (min-width: 768px){
     .secao02 {
         padding: 56px 40px 64px;
-        max-width: 900px;
-        margin: 0 auto;
     }
 
     .grade {
@@ -37,8 +37,6 @@
 @media (min-width: 1024px) {
     .secao02 {
         padding: 72px 48px 80px;
-        max-width: var(--max-width);
-        margin: 0 auto;
     }
 
     .grade {

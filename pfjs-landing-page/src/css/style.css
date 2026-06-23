@@ -16,6 +16,8 @@
   --max-width: 1280px;
 }
 
+
+
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -23,7 +25,13 @@
   padding: 0 24px;
 }
 
-body{
+
+html {
+  /* scroll-behavior: smooth; */
+  scroll-padding-top: 85px;  /* altura aproximada do menu fixo */
+}
+
+body {
   background-color: var(--azul-escuro);
 }
 
@@ -34,6 +42,7 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Cinzel', serif;
 }
