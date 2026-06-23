@@ -1,21 +1,19 @@
 import styles from './TituloSecao.module.css';
 
-function TituloSecao({ children, className }) {
-    return (
-        <h2 className={`${styles.tituloSecao} ${className || ''}`}>
-            {children}
-        </h2>
-    );
-}
-
-export default TituloSecao;
-function TituloSecao({ children, className, titulo }) {
+function TituloSecao({ children, className, titulo, subtitulo }) {
     return (
         <div>
-            <h2 className={`${styles.tituloSecao} ${className || ''}`}>
-                {children}
-            </h2>
-            {titulo && <h1>{titulo}</h1>}
+            {titulo && (
+                <h2 className={`${styles.tituloSecao} ${className || ''}`}>
+                    {titulo}
+                </h2>
+            )}
+            {children && (
+                <h2 className={`${styles.tituloSecao} ${className || ''}`}>
+                    {children}
+                </h2>
+            )}
+            {subtitulo && <p className={styles.subtituloSecao}>{subtitulo}</p>}
         </div>
     );
 }

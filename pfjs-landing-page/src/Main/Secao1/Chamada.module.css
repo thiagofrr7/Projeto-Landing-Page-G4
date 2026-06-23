@@ -40,17 +40,18 @@ background: linear-gradient(
 
 
 
-.esquerda h1 {
+.chamada {
     margin-top: 25px;
-    font-size: 40px;
-    text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.9);
-}
-
-.esquerda h2{
-    margin-top: 5px;
     font-size: 23px;
+    color: var(--dourado);
+    font-family: 'Cinzel', serif;
     text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
     white-space: pre-line;
+}
+
+.titulo {
+    font-size: 40px;
+    text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.9);
 }
 
 .bandeiras {
@@ -136,15 +137,14 @@ background: linear-gradient(
     padding-top: 120px;
 }
 
-.esquerda h1 {
-    margin-top: 20px;
-    font-size: 68px;
+.chamada {
+    margin-top: 0;
+    font-size: 25px;
     text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.9);
 }
 
-.esquerda h2{
-    margin-top: 5px;
-    font-size: 25px;
+.titulo {
+    font-size: 68px;
     text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.9);
 }
 

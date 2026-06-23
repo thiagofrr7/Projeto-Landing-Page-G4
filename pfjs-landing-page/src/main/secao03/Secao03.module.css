@@ -10,6 +10,7 @@
     gap: 12px;
     max-width: 320px;
     margin: 0 auto;
+    margin-top: 40px;
 }
 
 /* ========== TABLET ========== */
@@ -25,6 +26,7 @@
         max-width: none;
         width: 100%;
         gap: 16px;
+        margin-top: 56px;
     }
 
     .grade > :last-child:nth-child(3n + 1) {
@@ -46,7 +48,7 @@
         max-width: none;
         width: 100%;
         margin: 0 auto;
-        margin-top: 70px;
+        margin-top: 72px;
     }
 
 }

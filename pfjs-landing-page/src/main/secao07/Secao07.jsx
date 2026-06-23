@@ -1,6 +1,6 @@
 import styles from './Secao07.module.css'
 import Formulario from './Formulario/Formulario'
-import TituloSecao from '../../Components/TituloSecao/TituloSecao'
+import TituloSecao from '../../Componentes/TituloSecao/TituloSecao'
 
 function Secao07() {
     return (

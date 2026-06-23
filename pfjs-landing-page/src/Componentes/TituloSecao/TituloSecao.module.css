@@ -1,9 +1,14 @@
 .tituloSecao {
     margin-top: 0;
-    margin-bottom: 1px;
+    margin-bottom: 24px;  /* espaço abaixo do título até o conteúdo */
     color: var(--dourado);
     font-family: "Cinzel", serif;
     font-weight: 500;
     text-align: center;
     font-size: 35px;
+}
+
+.subtituloSecao {
+    margin-top: 0;
+    text-align: center;
 }

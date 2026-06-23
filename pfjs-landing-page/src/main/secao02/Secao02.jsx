@@ -1,6 +1,6 @@
 import Caixa from './Caixa/Caixa'
 import styles from './Secao02.module.css'
-import TituloSecao from '../../Components/TituloSecao/TituloSecao'
+import TituloSecao from '../../Componentes/TituloSecao/TituloSecao'
 
 
 const cartoes = [

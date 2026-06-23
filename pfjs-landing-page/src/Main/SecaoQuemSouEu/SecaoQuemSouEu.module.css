@@ -9,7 +9,7 @@
     padding: 0 40px;
     max-width: 1200px;
     align-items: stretch;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .divTexto {
@@ -41,7 +41,9 @@
     color: white;
     font-size: 1.1rem;
     margin: 0 auto;
-    max-width: 400px;
+    /* max-width: 400px; */
+    word-spacing: 4px;
+
 }
 
 .divTexto p:nth-of-type(1) {
@@ -66,9 +68,7 @@
         padding: 0 20px;
     }
 
-    .divTexto p {
-        max-width: 300px;
-    }
+  
 
     .divFoto img {
         max-width: 300px;
@@ -82,6 +82,7 @@
         flex-direction: column;
         align-items: center;
         padding: 0 20px;
+        margin-top: 56px;
     }
 
 
@@ -93,6 +94,7 @@
         flex-direction: row;
         align-items: center;
         padding: 0 20px;
+        margin-top: 72px;
     }
 
 }

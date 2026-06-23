@@ -1,7 +1,6 @@
 import styles from './Secao03.module.css'
 import Documento from './Documento/Documento'
-import TituloSecao from '../../Components/TituloSecao/TituloSecao'
-
+import TituloSecao from '../../Componentes/TituloSecao/TituloSecao'
 import diplomaIcon from '../../assets/Icons/diploma.svg'
 import historicoIcon from '../../assets/Icons/historico-escolar.svg'
 import certidoesIcon from '../../assets/Icons/certidoes.svg'

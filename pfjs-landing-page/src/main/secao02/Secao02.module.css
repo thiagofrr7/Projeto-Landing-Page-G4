@@ -11,6 +11,7 @@
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
+    margin-top: 40px;
     align-items: stretch;
 }
 
@@ -27,6 +28,7 @@
         gap: 30px;
         max-width: none;
         margin: 0;
+        margin-top: 56px;
         align-items: stretch;
     }
 }
@@ -40,7 +42,7 @@
     }
 
     .grade {
-        margin-top: 90px;
+        margin-top: 72px;
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
         align-items: stretch;

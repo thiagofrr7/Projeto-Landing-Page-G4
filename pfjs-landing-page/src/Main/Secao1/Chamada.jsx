@@ -1,5 +1,5 @@
 import React from 'react';
-import TituloSecao from '../../Componentes/TituloSecao/TituloSecao';
+import tituloStyles from '../../Componentes/TituloSecao/TituloSecao.module.css';
 import styles from './Chamada.module.css';
 import Botao from '../../Componentes/Botao/Botao';
 import bandeiraBr from '../../assets/Imagens/bandeiraBR.png';
@@ -12,9 +12,10 @@ function Chamada() {
             <div className={styles.heroInner}>
                 <div className={styles.container}>
                     <div className={styles.esquerda}>
-                        <TituloSecao titulo="Tradução Juramentada">
+                        <p className={styles.chamada}>
                             {"Precisa traduzir um documento?\nEu resolvo isso para você"}
-                        </TituloSecao>
+                        </p>
+                        <h1 className={`${tituloStyles.tituloSecao} ${styles.titulo}`}>Tradução Juramentada</h1>
 
                         <div className={styles.bandeiras}>
                             <div className={styles.bandeira}>
