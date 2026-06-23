@@ -26,18 +26,6 @@
     transform: scale(1.08);
 }
 
-.cliqueAqui {
-    display: flex;
-    justify-content: center;
-    margin-top: 16px;
-}
-
-.cliqueAqui img {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-}
-
 .logoGrande {
     display: flex;
     justify-content: center;
@@ -62,8 +50,6 @@
     height: auto;
 }
 
-/* ================= TABLET ================= */
-
 @media (min-width: 768px) and (max-width: 1023px) {
 
     .footer {
@@ -84,13 +70,7 @@
         width: 300px;
     }
 
-    .cliqueAqui img {
-        max-width: 320px;
-    }
-
 }
-
-/* ================= DESKTOP ================= */
 
 @media (min-width: 1024px) {
 
@@ -102,11 +82,12 @@
     .containerRedesSociais {
         grid-template-columns: repeat(4, auto);
         gap: 22px;
+        margin-bottom: -20px;
     }
 
     .containerRedesSociais img {
-        width: 42px;
-        height: 42px;
+        width: 38px;
+        height: 38px;
     }
 
     .logoGrande {
@@ -114,11 +95,7 @@
     }
 
     .logoGrande img {
-        width: 350px;
-    }
-
-    .cliqueAqui img {
-        max-width: 380px;
+        width: 250px;
     }
 
 }
