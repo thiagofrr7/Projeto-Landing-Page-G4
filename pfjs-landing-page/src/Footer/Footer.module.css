@@ -1,96 +1,124 @@
 .footer {
-    margin-top: 200px;
+    margin-top: 40px;
+    padding: 30px 20px 20px;
 }
 
 .containerRedesSociais {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     justify-content: center;
-    gap: 12px;
-    margin: 0 auto;
-    max-width: 150px;
+    gap: 18px;
+    margin: 0 auto 24px;
 }
 
 .containerRedesSociais > div {
-    width: 60px;
+    width: auto;
 }
 
 .containerRedesSociais img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-}   
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    transition: transform .2s ease;
+}
 
-.cliqueAqui img {
-    width: 100%;
-    max-width: 500px;
+.containerRedesSociais img:hover {
+    transform: scale(1.08);
 }
 
 .cliqueAqui {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 16px;
+}
+
+.cliqueAqui img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
 }
 
 .logoGrande {
     display: flex;
     justify-content: center;
+    padding: 10px 0;
 }
 
 .logoGrande img {
-    width: 400px;
+    width: 260px;
+    height: auto;
+    object-fit: contain;
 }
 
 .faixa {
-    width: 100%;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
 }
 
 .faixa img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
-    margin: 0;
-    padding: 0;
 }
 
-@media (min-width: 768px) and (max-width: 1024px){
+/* ================= TABLET ================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
 
     .footer {
-        margin-top: 200px;
-    }
-
-    .containerRedesSociais > div {
-        width: auto; 
-    }
-
-}
-
-@media (min-width: 1024px){
-
-    .logoGrande {
-        display: flex;
-        justify-content: center;
-        padding: 24px 0;
-    }
-
-    .logoGrande img {
-        width: 600px;
-        height: auto;
-        object-fit: contain;
+        margin-top: 60px;
+        padding: 30px 20px 20px;
     }
 
     .containerRedesSociais {
-        flex-wrap: nowrap;
+        grid-template-columns: repeat(2, auto);
     }
 
-    .containerRedesSociais > div {
-        width: auto;
+    .containerRedesSociais img {
+        width: 48px;
+        height: 48px;
     }
+
+    .logoGrande img {
+        width: 300px;
+    }
+
+    .cliqueAqui img {
+        max-width: 320px;
+    }
+
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 1024px) {
 
     .footer {
-        margin-top: 200px;
+        margin-top: 60px;
+        padding: 30px 20px 20px;
     }
 
+    .containerRedesSociais {
+        grid-template-columns: repeat(4, auto);
+        gap: 22px;
+    }
+
+    .containerRedesSociais img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logoGrande {
+        padding: 12px 0;
+    }
+
+    .logoGrande img {
+        width: 350px;
+    }
+
+    .cliqueAqui img {
+        max-width: 380px;
+    }
 
 }

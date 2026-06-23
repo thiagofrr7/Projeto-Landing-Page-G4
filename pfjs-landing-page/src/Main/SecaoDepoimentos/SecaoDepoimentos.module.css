@@ -1,4 +1,7 @@
 .secaoDepoimentos {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 72px 48px 80px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -17,20 +20,36 @@ p {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 80px;
     margin-top: 40px;
 }
 
 @media (min-width: 768px) {
     .divDepoimentos {
+        flex-direction: row;      /* tablet: 2 por linha */
+        flex-wrap: wrap;
         margin-top: 56px;
+        gap: 60px;
+    }
+
+    .boxDepoimento {
+        width: calc(50% - 40px);
+        max-width: 340px;
     }
 }
 
 @media (min-width: 1024px) {
     .divDepoimentos {
+        flex-direction: row;      /* desktop: 3 em linha */
+        flex-wrap: nowrap;
         margin-top: 72px;
+        gap: 80px;
+    }
+
+    .boxDepoimento {
+        width: 300px;
+        max-width: none;
     }
 }
 
