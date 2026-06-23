@@ -3,7 +3,6 @@ import iconeFacebook from '../assets/Icons/facebook.jpg';
 import iconeEmail from '../assets/Icons/email.jpg';
 import iconeInstagram from '../assets/Icons/instagram.jpg';
 import logoGrande from '../assets/Imagens/logogrande.jpg';
-import cliqueAqui from '../assets/Imagens/cliquenosicones.jpg';
 import faixa from '../assets/Imagens/faixa.jpg';
 import styles from './Footer.module.css';
 
@@ -23,10 +22,6 @@ function Footer() {
         <div className={styles.email}>
           <a href="https://mail.google.com/mail/?view=cm&to=daippaz@gmail.com" target="_blank"><img src={iconeEmail} alt="Email" /></a>
         </div>
-      </div>
-
-      <div className={styles.cliqueAqui}>
-        <img src={cliqueAqui} alt="Clique Aqui" />
       </div>
 
       <div className={styles.logoGrande}>
