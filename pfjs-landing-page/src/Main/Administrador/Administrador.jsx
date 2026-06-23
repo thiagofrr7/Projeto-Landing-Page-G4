@@ -197,7 +197,7 @@ function Administrador() {
 
     function handleSair() {
         sessionStorage.removeItem('autenticado');
-        navigate('/login');
+        navigate('/');
     }
 
     // ════════════════════════════════════════════

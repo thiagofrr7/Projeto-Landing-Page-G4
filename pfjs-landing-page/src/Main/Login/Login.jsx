@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from './Login.module.css';
 
 const USUARIO_TESTE = 'admin';
@@ -51,6 +51,7 @@ function Login() {
                     </div>
                     {erro && <p className={styles.erro}>{erro}</p>}
                     <button type="submit" className={styles.botao}>Entrar</button>
+                    <Link to="/" className={styles.voltar}>Voltar para Página Inicial</Link>
                 </form>
             </div>
         </main>

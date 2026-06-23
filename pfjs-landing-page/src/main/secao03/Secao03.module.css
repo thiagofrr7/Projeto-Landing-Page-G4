@@ -4,7 +4,6 @@
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 40px 20px 48px;
-    margin-top: -50px;
 }
 
 .grade {
@@ -18,7 +17,7 @@
 /* ========== TABLET ========== */
 @media (min-width: 768px) {
     .secao03 {
-        padding: 72px 40px 64px;
+        padding: 56px 40px 64px;
     }
 
     .grade {
@@ -40,7 +39,7 @@
 /* ========== DESKTOP ========== */
 @media (min-width: 1024px) {
     .secao03 {
-        padding: 120px 48px 80px;
+        padding: 72px 48px 80px;
     }
 
     .grade {

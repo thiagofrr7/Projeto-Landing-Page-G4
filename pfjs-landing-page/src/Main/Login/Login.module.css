@@ -109,6 +109,22 @@
     opacity: 0.9;
 }
 
+.voltar {
+    margin-top: 4px;
+    text-align: center;
+    color: var(--dourado);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.voltar:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
 /* Desktop */
 @media (min-width: 768px) {
     .loginCard {

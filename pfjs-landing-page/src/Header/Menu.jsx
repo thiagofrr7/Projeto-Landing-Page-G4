@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './Menu.module.css';
 import logo from '../assets/Icons/logo.png';
 import menuHamb from '../assets/Icons/menu_hamb.svg';
@@ -7,6 +7,8 @@ import menuHamb from '../assets/Icons/menu_hamb.svg';
 function Menu() {
     const [menuAberto, setMenuAberto] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const { pathname } = useLocation();
+    const isLogin = pathname === '/login';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -54,6 +56,8 @@ function Menu() {
 
         setMenuAberto(false);
     };
+
+    if (isLogin) return null;
 
     return (
         <nav className={`${styles.menu} ${scrolled ? styles.menuScrolled : ''}`}>

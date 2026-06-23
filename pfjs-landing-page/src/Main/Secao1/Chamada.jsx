@@ -7,6 +7,28 @@ import bandeiraEs from '../../assets/Imagens/bandeiraES.png';
 import tradutora from '../../assets/Imagens/fotoChamada.webp';
 
 function Chamada() {
+    const handleFaleComigo = () => {
+        const elemento = document.getElementById('secao07');
+        if (!elemento) return;
+
+        const offset = 85;
+        const destino = elemento.getBoundingClientRect().top + window.scrollY - offset;
+        const inicio = window.scrollY;
+        const distancia = destino - inicio;
+        const duracao = 1000;
+        let inicioTempo = null;
+
+        const animar = (tempoAtual) => {
+            if (!inicioTempo) inicioTempo = tempoAtual;
+            const progresso = Math.min((tempoAtual - inicioTempo) / duracao, 1);
+            const suavizado = 1 - Math.pow(1 - progresso, 3);
+            window.scrollTo(0, inicio + distancia * suavizado);
+            if (progresso < 1) requestAnimationFrame(animar);
+        };
+
+        requestAnimationFrame(animar);
+    };
+
     return (
         <section id="chamada" className={styles.hero}>
             <div className={styles.heroInner}>
@@ -29,7 +51,7 @@ function Chamada() {
                         </div>
 
                         <div className={styles.btnWrapper}>
-                            <Botao texto="Fale Comigo" onClick={() => { }} />
+                            <Botao texto="Fale Comigo" onClick={handleFaleComigo} />
                         </div>
                     </div>
 
