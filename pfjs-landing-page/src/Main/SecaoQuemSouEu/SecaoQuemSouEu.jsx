@@ -4,7 +4,7 @@ import styles from './SecaoQuemSouEu.module.css';
 
 function SecaoQuemSouEu() {
   return (
-    <section className={styles.secaoQuemSouEu}>
+    <section className={styles.secaoQuemSouEu} id="quemSouEu">
       <TituloSecao>Quem Sou Eu</TituloSecao>
     <div className={styles.divQuemSouEu}>
       <div className={styles.divTexto}>

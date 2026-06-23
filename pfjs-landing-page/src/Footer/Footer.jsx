@@ -10,18 +10,18 @@ import styles from './Footer.module.css';
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.containerRedesSociais}>
+      <div className={`${styles.containerRedesSociais} sr-reveal-fade`}>
         <div className={styles.whatsapp}>
-            <a href="https://contate.me/ios/tradutora_juramentada" target="_blank"><img src={iconeWhatsapp} alt="WhatsApp" /></a>
+          <a href="https://contate.me/ios/tradutora_juramentada" target="_blank"><img src={iconeWhatsapp} alt="WhatsApp" /></a>
         </div>
         <div className={styles.instagram}>
-            <a href="https://www.instagram.com/daiane_tradutorajuramentada/" target="_blank"><img src={iconeInstagram} alt="Instagram" /></a>
+          <a href="https://www.instagram.com/daiane_tradutorajuramentada/" target="_blank"><img src={iconeInstagram} alt="Instagram" /></a>
         </div>
         <div className={styles.facebook}>
-            <a href="https://web.facebook.com/tradutoraespanhol/?_rdc=1&_rdr#" target="_blank"><img src={iconeFacebook} alt="Facebook" /></a>   
+          <a href="https://web.facebook.com/tradutoraespanhol/?_rdc=1&_rdr#" target="_blank"><img src={iconeFacebook} alt="Facebook" /></a>
         </div>
         <div className={styles.email}>
-            <a href="https://mail.google.com/mail/?view=cm&to=daippaz@gmail.com" target="_blank"><img src={iconeEmail} alt="Email" /></a>
+          <a href="https://mail.google.com/mail/?view=cm&to=daippaz@gmail.com" target="_blank"><img src={iconeEmail} alt="Email" /></a>
         </div>
       </div>
 
@@ -34,7 +34,7 @@ function Footer() {
       </div>
 
       <div className={styles.faixa}>
-        <img src={faixa} alt ="Faixa"></img>
+        <img src={faixa} alt="Faixa"></img>
       </div>
     </footer>
   );

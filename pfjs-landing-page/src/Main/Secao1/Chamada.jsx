@@ -11,7 +11,7 @@ function Chamada() {
         <section id="chamada" className={styles.hero}>
             <div className={styles.heroInner}>
                 <div className={styles.container}>
-                    <div className={styles.esquerda}>
+                    <div className={`${styles.esquerda} sr-reveal-fade`}>
                         <p className={styles.chamada}>
                             {"Precisa traduzir um documento?\nEu resolvo isso para você"}
                         </p>
@@ -33,7 +33,7 @@ function Chamada() {
                         </div>
                     </div>
 
-                    <div className={styles.direita}>
+                    <div className={`${styles.direita} sr-reveal-fade`}>
                         <img src={tradutora} alt="Tradutora" className={styles.foto} />
                     </div>
                 </div>

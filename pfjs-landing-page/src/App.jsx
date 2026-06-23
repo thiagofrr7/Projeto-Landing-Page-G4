@@ -10,23 +10,30 @@ import Secao07 from './Main/Secao07/Secao07'
 import Footer from './Footer/Footer'
 import Login from './Main/Login/Login'
 import Administrador from './Main/Administrador/Administrador'
+import { useScrollReveal } from './Hooks/useScrollReveal'  // pasta Hooks (H maiúsculo)
+
+function Home() {
+  useScrollReveal()
+
+  return (
+    <>
+      <Menu />
+      <Chamada />
+      <div className="sr-reveal-padrao"><Secao02 /></div>
+      <div className="sr-reveal-padrao"><Secao03 /></div>
+      <div className="sr-reveal-padrao"><SecaoQuemSouEu /></div>
+      <div className="sr-reveal-padrao"><SecaoDepoimentos /></div>
+      <div className="sr-reveal-padrao"><Faq /></div>
+      <div className="sr-reveal-padrao"><Secao07 /></div>
+      <div className="sr-reveal-padrao"><Footer /></div>
+    </>
+  )
+}
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={
-        <>
-          <Menu />
-          <Chamada />
-          <Secao02 />
-          <Secao03 />
-          <SecaoQuemSouEu />
-          <SecaoDepoimentos />
-          <Faq />
-          <Secao07 />
-          <Footer />
-        </>
-      } />
+      <Route path="/" element={<Home />} />
       <Route path="/login" element={
         <>
           <Menu />

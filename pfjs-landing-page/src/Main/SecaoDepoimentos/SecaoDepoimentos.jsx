@@ -48,7 +48,7 @@ function SecaoDepoimentos() {
     const indicadores = Array.from({ length: totalIndicadores }, (_, i) => i);
 
     return (
-        <section id="depoimentos" className={styles.secaoDepoimentos}>
+        <section id="depoimentos" className={`${styles.secaoDepoimentos} sr-reveal-depoimentos`}>
             <TituloSecao>Depoimentos</TituloSecao>
             <div className={styles.divDepoimentos}>
                 {depoimentos.length === 0 ? (
