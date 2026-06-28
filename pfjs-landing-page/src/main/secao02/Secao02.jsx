@@ -1,32 +1,15 @@
 import Caixa from './Caixa/Caixa'
 import styles from './Secao02.module.css'
 import TituloSecao from '../../Componentes/TituloSecao/TituloSecao'
-
-
-const cartoes = [
-  {
-    titulo: 'O que é?',
-    texto: 'Tradução oficial de documentos, feita com rigor e fidelidade.',
-  },
-  {
-    titulo: 'Quem faz?',
-    texto:
-      'Profissionais com formação em Letras, devidamente registrados e habilitados na Junta Comercial.',
-  },
-  {
-    titulo: 'Validade',
-    texto: 'Válida perante autoridades no Brasil e no exterior.',
-  },
-  {
-    titulo: 'Diferenças',
-    texto: 'Tem fé pública; não é equivalente à tradução simples.',
-  },
-]
+import { useIdioma } from '../../i18n/IdiomaContext'
 
 function Secao02() {
+  const { t } = useIdioma()
+  const cartoes = t('secao02.cartoes')
+
   return (
     <section className={styles.secao02} id="secao02">
-      <TituloSecao titulo="Tradução Juramentada" />
+      <TituloSecao titulo={t('secao02.titulo')} />
       <div className={styles.grade}>
         {cartoes.map((card) => (
           <Caixa key={card.titulo}

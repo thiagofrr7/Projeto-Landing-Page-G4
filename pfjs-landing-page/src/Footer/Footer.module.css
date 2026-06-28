@@ -33,13 +33,14 @@
 }
 
 .logoGrande img {
-    width: 260px;
+    width: 300px;
     height: auto;
     object-fit: contain;
 }
 
 .faixa {
     margin: 0;
+    margin-top: -55px;
     padding: 0;
     line-height: 0;
 }
@@ -67,7 +68,7 @@
     }
 
     .logoGrande img {
-        width: 300px;
+        width: 340px;
     }
 
 }
@@ -95,7 +96,7 @@
     }
 
     .logoGrande img {
-        width: 250px;
+        width: 350px;
     }
 
 }

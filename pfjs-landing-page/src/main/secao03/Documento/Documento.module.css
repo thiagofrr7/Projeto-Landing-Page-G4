@@ -1,17 +1,17 @@
 /* ========== MOBILE ========== */
 .documento {
-    padding: 8px 4px;
+    padding: 0.5rem 0.25rem;
     text-align: center;
     display: grid;
-    grid-template-rows: 55px auto;
-    gap: 8px;
+    grid-template-rows: 4rem auto;
+    gap: 0.5rem;
     justify-items: center;
     align-content: start;
 }
 
 .icone {
-    max-width: 44px;
-    max-height: 55px;
+    max-width: 3.25rem;
+    max-height: 4rem;
     width: auto;
     height: auto;
     display: block;
@@ -22,7 +22,7 @@
 
 .titulo {
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 0.9375rem;
     font-weight: 400;
     color: var(--branco);
     margin: 0;
@@ -35,39 +35,39 @@
 }
 
 /* ========== TABLET ========== */
-@media (min-width: 768px) {
+@media (min-width: 48em) {
     .documento {
-        grid-template-rows: 70px auto;
-        gap: 10px;
-        padding: 10px 6px;
+        grid-template-rows: 5rem auto;
+        gap: 0.625rem;
+        padding: 0.625rem 0.375rem;
     }
 
     .icone {
-        max-width: 52px;
-        max-height: 70px;
+        max-width: 3.75rem;
+        max-height: 5rem;
     }
 
     .titulo {
-        font-size: 15px;
+        font-size: 1rem;
         min-height: 2.6em;
     }
 }
 
 /* ========== DESKTOP ========== */
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
     .documento {
-        grid-template-rows: 80px auto;
-        gap: 12px;
-        padding: 8px 4px;
+        grid-template-rows: 8rem auto;
+        gap: 0.875rem;
+        padding: 0.5rem 0.25rem;
     }
 
     .icone {
-        max-width: 60px;
-        max-height: 80px;
+        max-width: 6.5rem;
+        max-height: 8rem;
     }
 
     .titulo {
-        font-size: 16px;
+        font-size: 1.3125rem;
         min-height: 2.6em;
     }
 }

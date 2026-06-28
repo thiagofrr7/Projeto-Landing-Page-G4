@@ -2,6 +2,7 @@ import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import styles from './Formulario.module.css'
 import Botao from '../../../Componentes/Botao/Botao'
+import { useIdioma } from '../../../i18n/IdiomaContext'
 
 // Formata o telefone como (00) 00000-0000 enquanto o usuário digita
 function mascararTelefone(valor) {
@@ -14,6 +15,7 @@ function mascararTelefone(valor) {
 }
 
 function Formulario() {
+    const { t } = useIdioma()
     // Um único estado guarda todos os campos do formulário
     const [form, setForm] = useState({
         nome: '',
@@ -23,17 +25,23 @@ function Formulario() {
     })
     // Mensagem de feedback (serve tanto para erro quanto para sucesso)
     const [mensagem, setMensagem] = useState('')
+    const [sucesso, setSucesso] = useState(false)
+
+    function definirFeedback(texto, ehSucesso) {
+        setMensagem(texto)
+        setSucesso(ehSucesso)
+    }
 
     // Atualiza o campo que está sendo digitado, usando o "name" do input
     function aoDigitar(e) {
         const { name, value } = e.target
-        setMensagem('')
+        definirFeedback('', false)
         setForm({ ...form, [name]: value })
     }
 
     // O telefone passa pela máscara antes de ser salvo no estado
     function aoDigitarTelefone(e) {
-        setMensagem('')
+        definirFeedback('', false)
         setForm({ ...form, telefone: mascararTelefone(e.target.value) })
     }
 
@@ -42,12 +50,12 @@ function Formulario() {
         const { nome, telefone, email, msg } = form
 
         if (!nome || !telefone || !email || !msg) {
-            setMensagem('Todos os campos devem ser preenchidos!')
+            definirFeedback(t('form.erroCampos'), false)
             return
         }
 
         if (telefone.replace(/\D/g, '').length < 10) {
-            setMensagem('Telefone inválido! Use DDD + número.')
+            definirFeedback(t('form.erroTelefone'), false)
             return
         }
 
@@ -61,15 +69,13 @@ function Formulario() {
         emailjs
             .send('service_hyuenvg', 'template_ojci3zi', templateParams, 'MFBCIWpoIEEiLDpeZ')
             .then(() => {
-                setMensagem('E-mail enviado com sucesso!')
+                definirFeedback(t('form.sucesso'), true)
                 setForm({ nome: '', telefone: '', email: '', msg: '' })
             })
             .catch(() => {
-                setMensagem('Não foi possível enviar o e-mail!')
+                definirFeedback(t('form.erroEnvio'), false)
             })
     }
-
-    const sucesso = mensagem.includes('sucesso')
 
     return (
         <form
@@ -80,58 +86,58 @@ function Formulario() {
             }}
         >
             <fieldset className={styles.campo}>
-                <legend className={styles.label}>Nome completo:</legend>
+                <legend className={styles.label}>{t('form.nomeLabel')}</legend>
                 <input
                     type="text"
                     name="nome"
                     value={form.nome}
                     onChange={aoDigitar}
                     className={styles.input}
-                    placeholder="Digite seu nome"
+                    placeholder={t('form.nomePlaceholder')}
                     required
                 />
             </fieldset>
 
             <fieldset className={styles.campo}>
-                <legend className={styles.label}>Telefone:</legend>
+                <legend className={styles.label}>{t('form.telefoneLabel')}</legend>
                 <input
                     type="tel"
                     name="telefone"
                     value={form.telefone}
                     onChange={aoDigitarTelefone}
                     className={styles.input}
-                    placeholder="(xx) xxxxx-xxxx"
+                    placeholder={t('form.telefonePlaceholder')}
                     required
                 />
             </fieldset>
 
             <fieldset className={styles.campo}>
-                <legend className={styles.label}>E-mail:</legend>
+                <legend className={styles.label}>{t('form.emailLabel')}</legend>
                 <input
                     type="email"
                     name="email"
                     value={form.email}
                     onChange={aoDigitar}
                     className={styles.input}
-                    placeholder="Digite seu e-mail"
+                    placeholder={t('form.emailPlaceholder')}
                     required
                 />
             </fieldset>
 
             <fieldset className={styles.campo}>
-                <legend className={styles.label}>Mensagem:</legend>
+                <legend className={styles.label}>{t('form.mensagemLabel')}</legend>
                 <textarea
                     name="msg"
                     value={form.msg}
                     onChange={aoDigitar}
                     className={styles.textarea}
                     rows={5}
-                    placeholder="Digite sua mensagem"
+                    placeholder={t('form.mensagemPlaceholder')}
                     required
                 />
             </fieldset>
             <div className={styles.botaoWrapper}>
-                <Botao texto="Enviar" />
+                <Botao texto={t('form.enviar')} />
                 {mensagem && (
                     <p className={sucesso ? styles.feedbackSucesso : styles.feedbackErro}>
                         {mensagem}

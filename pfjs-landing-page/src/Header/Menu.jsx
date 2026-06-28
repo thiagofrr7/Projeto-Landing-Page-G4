@@ -3,11 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import styles from './Menu.module.css';
 import logo from '../assets/Icons/logo.png';
 import menuHamb from '../assets/Icons/menu_hamb.svg';
+import { useIdioma } from '../i18n/IdiomaContext';
 
 function Menu() {
     const [menuAberto, setMenuAberto] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const { pathname } = useLocation();
+    const { t, alternarIdioma } = useIdioma();
     const isLogin = pathname === '/login';
 
     useEffect(() => {
@@ -54,6 +56,13 @@ function Menu() {
             return;
         }
 
+        if (href === '/' && pathname === '/') {
+            e.preventDefault();
+            scrollParaSecao('chamada');
+            setMenuAberto(false);
+            return;
+        }
+
         setMenuAberto(false);
     };
 
@@ -75,14 +84,24 @@ function Menu() {
                     className={`${styles.menuLinks} ${menuAberto ? styles.menuLinksAberto : ''}`}
                     onClick={handleClickLink}
                 >
-                    <li><Link to="/">Home</Link></li>
-                    <li><a href="#secao02">O Que É</a></li>
-                    <li><a href="#secao03">Principais Documentos</a></li>
-                    <li><a href="#quemSouEu">Quem Sou Eu</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#secao07">Fale Comigo</a></li>
-                    <li><Link to="/login">Login</Link></li>
+                    <li><Link to="/">{t('menu.home')}</Link></li>
+                    <li><a href="#secao02">{t('menu.oque')}</a></li>
+                    <li><a href="#secao03">{t('menu.documentos')}</a></li>
+                    <li><a href="#quemSouEu">{t('menu.quem')}</a></li>
+                    <li><a href="#depoimentos">{t('menu.depoimentos')}</a></li>
+                    <li><a href="#faq">{t('menu.faq')}</a></li>
+                    <li><a href="#secao07">{t('menu.fale')}</a></li>
+                    <li><Link to="/login">{t('menu.login')}</Link></li>
+                    <li>
+                        <button
+                            type="button"
+                            className={styles.botaoIdioma}
+                            onClick={() => { alternarIdioma(); setMenuAberto(false); }}
+                            aria-label={t('menu.botaoIdiomaAria')}
+                        >
+                            {t('menu.botaoIdioma')}
+                        </button>
+                    </li>
                 </ul>
             </div>
         </nav>

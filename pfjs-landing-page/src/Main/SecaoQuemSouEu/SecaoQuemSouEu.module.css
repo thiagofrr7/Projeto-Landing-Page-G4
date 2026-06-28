@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 
 
+.secaoQuemSouEu {
+    padding-top: 2.5rem;
+}
+
 .divQuemSouEu {
     display: flex;
     flex-direction: row;
@@ -88,6 +92,10 @@
 }
 
 @media (min-width: 1024px) {
+
+    .secaoQuemSouEu {
+        padding-top: 4rem;
+    }
 
     .divQuemSouEu {
         flex-direction: row;
