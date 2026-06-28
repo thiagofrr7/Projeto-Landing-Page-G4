@@ -23,6 +23,7 @@ p {
     flex-direction: column;
     gap: 80px;
     margin-top: 40px;
+    align-items: center;
 }
 
 @media (min-width: 768px) {
