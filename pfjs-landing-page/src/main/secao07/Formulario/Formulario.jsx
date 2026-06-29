@@ -1,61 +1,50 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import PhoneInput from 'react-phone-number-input'
+import { isValidPhoneNumber } from 'libphonenumber-js'
+import 'react-phone-number-input/style.css'
 import styles from './Formulario.module.css'
 import Botao from '../../../Componentes/Botao/Botao'
 
-// Formata o telefone como (00) 00000-0000 enquanto o usuário digita
-function mascararTelefone(valor) {
-    const numeros = valor.replace(/\D/g, '').slice(0, 11)
-    if (numeros.length === 0) return ''
-    if (numeros.length <= 2) return `(${numeros}`
-    if (numeros.length <= 6) return `(${numeros.slice(0, 2)}) ${numeros.slice(2)}`
-    if (numeros.length <= 10) return `(${numeros.slice(0, 2)}) ${numeros.slice(2, 6)}-${numeros.slice(6)}`
-    return `(${numeros.slice(0, 2)}) ${numeros.slice(2, 7)}-${numeros.slice(7)}`
-}
-
 function Formulario() {
-    // Um único estado guarda todos os campos do formulário
     const [form, setForm] = useState({
         nome: '',
         telefone: '',
         email: '',
         msg: '',
     })
-    // Mensagem de feedback (serve tanto para erro quanto para sucesso)
     const [mensagem, setMensagem] = useState('')
 
-    // Atualiza o campo que está sendo digitado, usando o "name" do input
     function aoDigitar(e) {
         const { name, value } = e.target
         setMensagem('')
         setForm({ ...form, [name]: value })
     }
 
-    // O telefone passa pela máscara antes de ser salvo no estado
-    function aoDigitarTelefone(e) {
+    function aoDigitarTelefone(valor) {
         setMensagem('')
-        setForm({ ...form, telefone: mascararTelefone(e.target.value) })
+        setForm({ ...form, telefone: valor || '' })
     }
 
-    // Valida os campos e, se estiver tudo certo, envia o e-mail pelo EmailJS
     function enviar() {
         const { nome, telefone, email, msg } = form
+        const nomeTrim = nome.trim()
 
-        if (!nome || !telefone || !email || !msg) {
-            setMensagem('Todos os campos devem ser preenchidos!')
+        if (!nomeTrim || !telefone || !email) {
+            setMensagem('Preencha nome, telefone e e-mail.')
             return
         }
 
-        if (telefone.replace(/\D/g, '').length < 10) {
-            setMensagem('Telefone inválido! Use DDD + número.')
+        if (!isValidPhoneNumber(telefone)) {
+            setMensagem('Telefone inválido! Inclua o código do país (ex.: +55, +34).')
             return
         }
 
         const templateParams = {
-            from_name: nome,
+            from_name: nomeTrim,
             from_email: email,
             from_phone: telefone,
-            from_msg: msg,
+            from_msg: msg || '(sem mensagem)',
         }
 
         emailjs
@@ -94,14 +83,20 @@ function Formulario() {
 
             <fieldset className={styles.campo}>
                 <legend className={styles.label}>Telefone:</legend>
-                <input
-                    type="tel"
-                    name="telefone"
+                <PhoneInput
+                    international
+                    defaultCountry="BR"
+                    countryCallingCodeEditable={false}
                     value={form.telefone}
                     onChange={aoDigitarTelefone}
-                    className={styles.input}
-                    placeholder="(xx) xxxxx-xxxx"
-                    required
+                    className={styles.telefoneInput}
+                    numberInputProps={{
+                        className: styles.telefoneNumero,
+                        required: true,
+                    }}
+                    countrySelectProps={{
+                        className: styles.telefonePais,
+                    }}
                 />
             </fieldset>
 
@@ -126,8 +121,7 @@ function Formulario() {
                     onChange={aoDigitar}
                     className={styles.textarea}
                     rows={5}
-                    placeholder="Digite sua mensagem"
-                    required
+                    placeholder="Digite sua mensagem (opcional)"
                 />
             </fieldset>
             <div className={styles.botaoWrapper}>

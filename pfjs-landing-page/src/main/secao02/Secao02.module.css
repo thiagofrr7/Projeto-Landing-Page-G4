@@ -3,46 +3,46 @@
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 40px 20px 48px;
+    padding: 2.5rem 1.25rem 3rem;
 }
 
 .grade {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 1.25rem;
     width: 100%;
-    max-width: 320px;
+    max-width: 20rem;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 2.5rem;
     align-items: stretch;
 }
 
 /* ========== TABLET ========== */
-@media (min-width: 768px){
+@media (min-width: 48em){
     .secao02 {
-        padding: 56px 40px 64px;
+        padding: 3.5rem 2.5rem 4rem;
     }
 
     .grade {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 1.875rem;
         max-width: none;
         margin: 0;
-        margin-top: 56px;
+        margin-top: 3.5rem;
         align-items: stretch;
     }
 }
 
 /* ========== DESKTOP ========== */
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
     .secao02 {
-        padding: 72px 48px 80px;
+        padding: 4.5rem 3rem 5rem;
     }
 
     .grade {
-        margin-top: 72px;
+        margin-top: 4.5rem;
         grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        gap: 2.5rem;
         align-items: stretch;
     }
 }

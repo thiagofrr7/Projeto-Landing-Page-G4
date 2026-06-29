@@ -10,7 +10,12 @@ function Secao07() {
             <div className={`${styles.caixa}`}>
                 <TituloSecao
                     titulo="Ficou com dúvidas?"
-                    subtitulo="Atendimento rápido, personalizado e 100% online."
+                    subtitulo={
+                        <>
+                            Atendimento rápido, personalizado e{' '}
+                            <span className={styles.subtituloOnline}>100% online!</span>
+                        </>
+                    }
                 />
                 <div className={styles.corpo}>
                     <div className={styles.areaForm}>

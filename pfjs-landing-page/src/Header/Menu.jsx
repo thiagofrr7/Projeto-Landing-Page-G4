@@ -54,6 +54,13 @@ function Menu() {
             return;
         }
 
+        if (href === '/' && pathname === '/') {
+            e.preventDefault();
+            scrollParaSecao('chamada');
+            setMenuAberto(false);
+            return;
+        }
+
         setMenuAberto(false);
     };
 
