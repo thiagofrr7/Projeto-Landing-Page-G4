@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "libphonenumber-js": "^1.13.7",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
+    "react-phone-number-input": "^3.4.17",
     "react-router-dom": "^7.18.0",
     "scrollreveal": "^4.0.9"
   },

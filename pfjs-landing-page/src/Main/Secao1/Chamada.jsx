@@ -5,10 +5,8 @@ import Botao from '../../Componentes/Botao/Botao';
 import bandeiraBr from '../../assets/Imagens/bandeiraBR.png';
 import bandeiraEs from '../../assets/Imagens/bandeiraES.png';
 import tradutora from '../../assets/Imagens/fotoChamada.webp';
-import { useIdioma } from '../../i18n/IdiomaContext';
 
 function Chamada() {
-    const { t } = useIdioma();
     const handleFaleComigo = () => {
         const elemento = document.getElementById('secao07');
         if (!elemento) return;
@@ -37,9 +35,9 @@ function Chamada() {
                 <div className={styles.container}>
                     <div className={`${styles.esquerda} sr-reveal-fade`}>
                         <p className={styles.chamada}>
-                            {t('hero.chamada')}
+                            {"Precisa traduzir um documento?\nEu resolvo isso para você"}
                         </p>
-                        <h1 className={`${tituloStyles.tituloSecao} ${styles.titulo}`}>{t('hero.titulo')}</h1>
+                        <h1 className={`${tituloStyles.tituloSecao} ${styles.titulo}`}>Tradução Juramentada</h1>
 
                         <div className={styles.bandeiras}>
                             <div className={styles.bandeira}>
@@ -53,7 +51,7 @@ function Chamada() {
                         </div>
 
                         <div className={styles.btnWrapper}>
-                            <Botao texto={t('hero.botao')} onClick={handleFaleComigo} />
+                            <Botao texto="Fale Comigo" onClick={handleFaleComigo} />
                         </div>
                     </div>
 

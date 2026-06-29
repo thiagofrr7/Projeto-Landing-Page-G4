@@ -2,10 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import BoxDepoimentos from '../../Componentes/BoxDepoimentos/BoxDepoimentos';
 import styles from './SecaoDepoimentos.module.css'
 import TituloSecao from '../../Componentes/TituloSecao/TituloSecao';
-import { useIdioma } from '../../i18n/IdiomaContext';
 
 function SecaoDepoimentos() {
-    const { t, idioma } = useIdioma();
     const url = "https://api.jsonbin.io/v3/b/6a387c8af5f4af5e291a4b71";
     const [depoimentos, setDepoimentos] = useState([]);
     const [indiceAtivo, setIndiceAtivo] = useState(0);
@@ -51,16 +49,16 @@ function SecaoDepoimentos() {
 
     return (
         <section id="depoimentos" className={`${styles.secaoDepoimentos} sr-reveal-depoimentos`}>
-            <TituloSecao>{t('depoimentos.titulo')}</TituloSecao>
+            <TituloSecao>Depoimentos</TituloSecao>
             <div className={styles.divDepoimentos}>
                 {depoimentos.length === 0 ? (
-                    <p>{t('comum.carregando')}</p>
+                    <p>Carregando...</p>
                 ) : (
                     depoimentosVisiveis.map((dep, indice) => (
                         <BoxDepoimentos
                             key={indice}
                             nome={dep.nome}
-                            texto={idioma === 'es' ? (dep.texto_es ?? dep.texto) : dep.texto}
+                            texto={dep.texto}
                         />
                     ))
                 )}

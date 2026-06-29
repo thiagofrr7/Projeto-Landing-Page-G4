@@ -66,26 +66,6 @@
     display: flex;
 }
 
-.botaoIdioma {
-    background: transparent;
-    border: 1px solid var(--dourado);
-    border-radius: 4px;
-    color: var(--dourado);
-    font-family: 'Cinzel', serif;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-
-.botaoIdioma:hover {
-    background: var(--dourado);
-    color: var(--azul-escuro);
-}
-
 .menuLinks a {
     color: var(--dourado);
     text-decoration: none;

@@ -1,7 +1,6 @@
 import styles from './Secao03.module.css'
 import Documento from './Documento/Documento'
 import TituloSecao from '../../Componentes/TituloSecao/TituloSecao'
-import { useIdioma } from '../../i18n/IdiomaContext'
 import diplomaIcon from '../../assets/Icons/diploma.svg'
 import historicoIcon from '../../assets/Icons/historico-escolar.svg'
 import certidoesIcon from '../../assets/Icons/certidoes.svg'
@@ -14,29 +13,27 @@ import antecedentesIcon from '../../assets/Icons/antecedentes-criminais.svg'
 import matriculaIcon from '../../assets/Icons/comprovante-matricula.svg'
 
 const documentos = [
-    { chave: 'antecedentes', icone: antecedentesIcon },
-    { chave: 'autorizacao', icone: autorizacaoIcon },
-    { chave: 'habilitacao', icone: habilitacaoIcon },
-    { chave: 'certidoes', icone: certidoesIcon },
-    { chave: 'matricula', icone: matriculaIcon },
-    { chave: 'contratos', icone: contratoIcon },
-    { chave: 'declaracoes', icone: declaracaoIcon },
-    { chave: 'diploma', icone: diplomaIcon },
-    { chave: 'historico', icone: historicoIcon },
-    { chave: 'procuracao', icone: procuracaoIcon },
+    { titulo: 'Antecedentes criminais', icone: antecedentesIcon },
+    { titulo: 'Autorização de viagem', icone: autorizacaoIcon },
+    { titulo: 'Carteira de habilitação', icone: habilitacaoIcon },
+    { titulo: 'Certidões', icone: certidoesIcon },
+    { titulo: 'Comprovante de matrícula', icone: matriculaIcon },
+    { titulo: 'Contratos', icone: contratoIcon },
+    { titulo: 'Declarações', icone: declaracaoIcon },
+    { titulo: 'Diploma', icone: diplomaIcon },
+    { titulo: 'Histórico escolar', icone: historicoIcon },
+    { titulo: 'Procuração', icone: procuracaoIcon },
 ]
 
 function Secao03() {
-    const { t } = useIdioma()
-
     return (
         <section className={styles.secao03} id="secao03">
-            <TituloSecao titulo={t('secao03.titulo')} />
+            <TituloSecao titulo="Documentos traduzidos" />
             <div className={styles.grade}>
                 {documentos.map((doc) => (
                     <Documento
-                        key={doc.chave}
-                        titulo={t(`secao03.documentos.${doc.chave}`)}
+                        key={doc.titulo}
+                        titulo={doc.titulo}
                         icone={doc.icone}
                     />
                 ))}

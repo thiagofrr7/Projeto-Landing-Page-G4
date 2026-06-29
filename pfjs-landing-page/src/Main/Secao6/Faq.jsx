@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Faq.module.css';
 import TituloSecao from '../../Componentes/TituloSecao/TituloSecao';
-import { useIdioma } from '../../i18n/IdiomaContext';
 
 function FAQ() {
-    const { t, idioma } = useIdioma();
     const url = "https://api.jsonbin.io/v3/b/6a372645f5f4af5e291656f8";
     const [faqs, setFaqs] = useState([]); //começo a lista com array vazio, por enquando nao carrega nada na tela
     const [aberto, setAberto] = useState(null);
@@ -32,11 +30,11 @@ function FAQ() {
     return (
         <section id="faq" className={styles.faq}>
             <div className={styles.faqInner}>
-                <TituloSecao>{t('faq.titulo')}</TituloSecao>
+                <TituloSecao>Perguntas Frequentes</TituloSecao>
 
                 <div className={styles.lista}>
                     {faqs.length === 0 ? (
-                        <p className={styles.carregando}>{t('comum.carregando')}</p>
+                        <p className={styles.carregando}>Carregando...</p>
                     ) : (
                         faqs.map((faq, indice) => (
                             <div key={indice} className={styles.itemWrapper}>
@@ -45,13 +43,13 @@ function FAQ() {
                                     onClick={() => setAberto(aberto === indice ? null : indice)}
                                 >
                                     <p className={styles.pergunta}>
-                                        {idioma === 'es' ? (faq.pergunta_es ?? faq.pergunta) : faq.pergunta} {aberto === indice ? '-' : '+'}
+                                        {faq.pergunta} {aberto === indice ? '-' : '+'}
                                     </p>
                                 </div>
 
                                 {aberto === indice && (
                                     <div className={styles.resposta}>
-                                        <p>{idioma === 'es' ? (faq.resposta_es ?? faq.resposta) : faq.resposta}</p>
+                                        <p>{faq.resposta}</p>
                                     </div>
                                 )}
                             </div>
